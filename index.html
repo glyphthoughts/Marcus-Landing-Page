@@ -152,7 +152,6 @@
             }
         }
 
-        /* Instagram Redirect Modal Styles */
         .redirect-modal {
             position: fixed;
             top: 0;
@@ -300,18 +299,19 @@
         }
     </style>
     
-    <!-- Instagram Browser Redirect Script -->
     <script>
-        // Detect Instagram in-app browser and redirect to default browser
-        if (navigator.userAgent.includes("Instagram")) {
+        function isInstagramInAppBrowser() {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            return ua.includes("Instagram") && !ua.includes("Chrome/") && !ua.includes("Safari/");
+        }
+        
+        if (isInstagramInAppBrowser()) {
             var isAndroid = /android/i.test(navigator.userAgent);
             var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             
             if (isAndroid) {
-                // Redirect Android users to Chrome/default browser
                 window.location.href = `intent://${window.location.host}${window.location.pathname}${window.location.search}#Intent;scheme=https;package=com.android.chrome;end`;
             } else if (isIOS) {
-                // For iOS, show redirect modal after short delay
                 setTimeout(function() {
                     document.body.insertAdjacentHTML('beforeend', `
                         <div class="redirect-modal">
