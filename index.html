@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus - Digital Stoic Philosopher</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            min-height: 100vh;
+            position: relative;
+            font-family: 'VT323', monospace;
+            color: #ffffff;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            z-index: 10;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .title {
+            font-family: 'VT323', monospace;
+            color: #ffffff;
+            font-size: 5rem;
+            text-align: center;
+            margin: 0 0 1rem 0;
+            animation: fadeInUp 1s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            font-weight: 400;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'VT323', monospace;
+            color: #888888;
+            font-size: 2.2rem;
+            text-align: center;
+            margin: 0 0 3rem 0;
+            animation: fadeInUp 1s ease-out 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            font-weight: 400;
+        }
+
+        .body-text {
+            font-family: 'VT323', monospace;
+            color: #ffffff;
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 1.6;
+            margin: 0 auto 4rem auto;
+            animation: fadeInUp 1s ease-out 0.6s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            font-weight: 400;
+            max-width: 900px;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.9s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .button {
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            color: #ffffff;
+            background: transparent;
+            border: 2px solid #444444;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 280px;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(0px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pixel {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            opacity: 0.6;
+            z-index: 1;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        @media (max-width: 320px) {
+            .title {
+                font-size: 2.5rem;
+                margin: 0.8rem 0 0.5rem 0;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+                margin: 0 0 2rem 0;
+            }
+
+            .body-text {
+                font-size: 1rem;
+                margin: 0 auto 2.5rem auto;
+                line-height: 1.5;
+            }
+
+            .button {
+                font-size: 1rem;
+                width: 240px;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.8rem;
+            }
+
+            .body-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .title {
+                font-size: 4rem;
+            }
+
+            .subtitle {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .title {
+                font-size: 6rem;
+            }
+
+            .subtitle {
+                font-size: 2.5rem;
+            }
+
+            .body-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Marcus</h1>
+        <h2 class="subtitle">Digital Stoic Philosopher</h2>
+        <p class="body-text">Engage in philosophical dialogue with Marcus, an AI embodiment of Stoic wisdom.
+            Drawing from Marcus Aurelius, Seneca, and Epictetus, Marcus offers guidance that challenges rather
+            than comforts, wisdom that transforms rather than merely informs. Each conversation is an opportunity
+            for genuine philosophical growth through contemplation and self-examination.</p>
+
+        <div class="buttons-container">
+            <a href="https://marcus-omega.vercel.app" target="_blank" class="button">Chat with Marcus</a>
+            <a href="https://glyphthoughts.github.io/About-Marcus-AI" class="button">About Marcus AI</a>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const width = window.innerWidth;
+            const starCount = width > 1200 ? 200 : width > 768 ? 150 : width > 480 ? 100 : 80;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'pixel';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(star);
+            }
+        }
+
+        createStars();
+
+        window.addEventListener('resize', function () {
+            document.querySelectorAll('.pixel').forEach(star => star.remove());
+            createStars();
+        });
+    </script>
+</body>
+
+</html>
